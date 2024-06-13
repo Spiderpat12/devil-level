@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/CoinsLevel/Coin 4.unity
     guid: bbe61aa7920b54c46876e77ccfec9814
+  - enabled: 1
+    path: Assets/Scenes/Levels/Controls/Con 1.unity
+    guid: 82a844f3d6642ee48b63a72b4a8dad88
   m_configObjects: {}
