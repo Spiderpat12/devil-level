@@ -23,6 +23,11 @@ public class MovementPlayerScript : MonoBehaviour
 
     [Space]
 
+    [Header("Particles")]
+    public ParticleSystem DieParticle;
+
+    [Space]
+
     [Header("GetCom")]
     private Rigidbody rb;
     private Animator anim;
@@ -91,6 +96,11 @@ public class MovementPlayerScript : MonoBehaviour
             anim.SetBool("IsJump", false);
         }
 
+    }
+
+    public void RunParticles(ParticleSystem TheParticle, Vector3 ParticlesPosition)
+    {
+        Instantiate(TheParticle, ParticlesPosition, TheParticle.transform.rotation);
     }
 
     void Flip()

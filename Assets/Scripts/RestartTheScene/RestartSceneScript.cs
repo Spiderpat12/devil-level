@@ -9,6 +9,8 @@ public class RestartSceneScript : MonoBehaviour
     private float delay = 2f;
     [HideInInspector] public RestartSceneScript restartSceneScript;
 
+    private MovementPlayerScript movementPlayerScript;
+
     private void Awake()
     {
         restartSceneScript = this;
@@ -18,6 +20,8 @@ public class RestartSceneScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            movementPlayerScript = other.gameObject.GetComponent<MovementPlayerScript>();
+            movementPlayerScript.RunParticles(movementPlayerScript.DieParticle, other.transform.position);
             Restart();
             Destroy(other.gameObject);
         }

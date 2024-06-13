@@ -2184,7 +2184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4605471598924267991, guid: aa4d080a94b0aeb4cabd0398ec243787, type: 3}
       propertyPath: ReverseControl
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4605471598924267991, guid: aa4d080a94b0aeb4cabd0398ec243787, type: 3}
       propertyPath: groundCheckDistance
