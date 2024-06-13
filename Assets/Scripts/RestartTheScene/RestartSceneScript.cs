@@ -19,6 +19,7 @@ public class RestartSceneScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Restart();
+            Destroy(other.gameObject);
         }
     }
 
