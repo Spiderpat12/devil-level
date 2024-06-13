@@ -6,30 +6,30 @@ public class LevelLoaderScriipt : MonoBehaviour
 {
     public static LevelLoaderScriipt levelLoaderScriipt;
     public float timerTrans;
+    public GameObject trans;
+    public Animator anim;
 
 
-    private Animator anim;
 
     private void Awake()
     {
         levelLoaderScriipt = this;
-    }
-
-    public void Start()
-    {
-        anim = GetComponent<Animator>();
-        gameObject.SetActive(true);
+        this.trans.SetActive(!this.trans.activeSelf);
     }
 
     private void Update()
     {
+        print(timerTrans);
+
+
         if (timerTrans > 0)
         {
             timerTrans -= Time.deltaTime;
 
             if (timerTrans <= 0)
             {
-                anim.SetTrigger("End");
+                print("sheesh");
+                anim.SetBool("Run", true);
             }
         }
     }

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class RestartSceneScript : MonoBehaviour
 {
 
-    private float delay = 0.15f;
+    private float delay = 2f;
     [HideInInspector] public RestartSceneScript restartSceneScript;
 
     private void Awake()
@@ -25,13 +25,14 @@ public class RestartSceneScript : MonoBehaviour
 
     public void Restart()
     {
-        ScreenShake.screenShake.ShakeScreen(0.38f, 0.5f);
+        ScreenShake.screenShake.ShakeScreen(0.3f, 0.25f);
         StartCoroutine(Death(delay));
         print("ahmedMohsen");
     }
 
     IEnumerator Death(float delay)
     {
+        LevelLoaderScriipt.levelLoaderScriipt.RunAnimation(0.5f);
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

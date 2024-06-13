@@ -47,7 +47,6 @@ public class SpikesMove : MonoBehaviour
 
         PlayerCheck = CheckPlayer();
 
-        print(dis);
 
         if (dis < NearValue || PlayerCheck && canCheck == true)
         {

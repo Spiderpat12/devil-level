@@ -8,10 +8,11 @@ public class Door : MonoBehaviour
     private float Dis;
     private GameObject Player;
     private Animator anim;
-    public float DelayAnimation = 1;
+    private float delayTeleport = 2f;
+
+    public float DelayAnimation = 0.5f;
     public float NearValue;
     public string SceneName;
-    public float delayTeleport;
 
     private void Awake()
     {
@@ -57,6 +58,7 @@ public class Door : MonoBehaviour
     {
         LevelLoaderScriipt.levelLoaderScriipt.RunAnimation(0.5f);
         yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(SceneName);
         print("Teleport");
     }
 
