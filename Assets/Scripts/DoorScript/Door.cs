@@ -55,9 +55,9 @@ public class Door : MonoBehaviour
 
     IEnumerator Teleport(float delay)
     {
+        LevelLoaderScriipt.levelLoaderScriipt.RunAnimation(0.5f);
         yield return new WaitForSeconds(delay);
         print("Teleport");
-        SceneManager.LoadScene(SceneName);
     }
 
 }
