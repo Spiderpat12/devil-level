@@ -43,7 +43,10 @@ public class SpikesMove : MonoBehaviour
 
     public void Update()
     {
-        dis = Vector3.Distance(transform.position, Player.transform.position);
+        if (Player != null)
+        {
+            dis = Vector3.Distance(transform.position, Player.transform.position);
+        }
 
         PlayerCheck = CheckPlayer();
 
