@@ -56,4 +56,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Tramp/Tramp 1.unity
     guid: bbfd6cd4961b6a444bc776b3d0c2455d
+  - enabled: 1
+    path: Assets/Scenes/Levels/Tramp/Tramp 2.unity
+    guid: 10defe062fe7c3d47b423946d68fd13f
   m_configObjects: {}
