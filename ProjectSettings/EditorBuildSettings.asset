@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Teleport/Teleport 3.unity
     guid: 787ec3637f417eb4ba0b3ab801d760d3
+  - enabled: 1
+    path: Assets/Scenes/Levels/Teleport/Teleport 4.unity
+    guid: 059278ba28437b44a8b322cbb9cee699
   m_configObjects: {}
