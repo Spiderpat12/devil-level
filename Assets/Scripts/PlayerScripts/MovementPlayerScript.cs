@@ -145,7 +145,7 @@ public class MovementPlayerScript : MonoBehaviour
     bool CheckGrounded()
     {
         RaycastHit hit;
-        bool grounded = Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance);
+        bool grounded = Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance) && !hit.collider.CompareTag("DamageObject");
         Color colorRay = grounded ? Color.green : Color.red;
         Debug.DrawRay(transform.position, Vector3.down * groundCheckDistance, colorRay);
         return grounded;

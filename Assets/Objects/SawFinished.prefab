@@ -155,6 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6490f9f6c7495354da853b55971971dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restartSceneScript: {fileID: 0}
 --- !u!1 &6415502166702086630
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +198,7 @@ GameObject:
   - component: {fileID: 6415502167158964530}
   m_Layer: 0
   m_Name: SawFinished
-  m_TagString: Untagged
+  m_TagString: DamageObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
