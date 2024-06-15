@@ -14,7 +14,6 @@ public class Button : MonoBehaviour
         if ((collision.gameObject.tag == "Player") && Run == false)
         {
             Run = true;
-            print("AhmedMohsen");
             anim.SetBool("RunButton", true);
         }
     }

@@ -19,7 +19,6 @@ public class LevelLoaderScriipt : MonoBehaviour
 
     private void Update()
     {
-        print(timerTrans);
 
 
         if (timerTrans > 0)

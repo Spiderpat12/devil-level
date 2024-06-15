@@ -14,7 +14,11 @@ public class ToutchCoinScript : MonoBehaviour
 
     public void Start()
     {
-        anim = trapGameObject.GetComponent<Animator>();
+        if(trapGameObject != null)
+        {
+            anim = trapGameObject.GetComponent<Animator>();
+        }
+
     }
 
     public void OnTriggerEnter(Collider other)

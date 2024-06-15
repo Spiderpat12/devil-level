@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e6d051bbe652ed479a2454572473bc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerScale: {x: 0, y: 0, z: 0}
+  speed: 0.5
 --- !u!65 &3546414608017530073
 BoxCollider:
   m_ObjectHideFlags: 0

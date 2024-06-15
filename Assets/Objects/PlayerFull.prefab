@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
-  jumpForce: 11.5
+  jumpForce: 10.5
   groundCheckDistance: 2.4
   rotationSpeed: 15
   ReverseControl: 0
