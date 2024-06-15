@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class TeleportScript : MonoBehaviour
 {
-    [Header("------Positions------")]
-    public GameObject[] Position;
+    [Header("------Position------")]
+    public GameObject Position;
+    public float delay;
 
+
+    private GameObject Player;
+    MovementPlayerScript movementPlayerScript;
 
 
 
@@ -14,8 +18,21 @@ public class TeleportScript : MonoBehaviour
     {
         if ((other.gameObject.tag == "Player"))
         {
-            other.gameObject.transform.position = new Vector3(other.gameObject.transform.position.x, Position[0].transform.position.y, Position[0].transform.position.z);
+            movementPlayerScript = other.GetComponent<MovementPlayerScript>();
+            movementPlayerScript.RunParticles(movementPlayerScript.DieParticle, other.transform.position);
+            other.gameObject.SetActive(false);
+            Player = other.gameObject;
+            StartCoroutine(Teleport(delay));
         }
+    }
+
+
+    IEnumerator Teleport(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        movementPlayerScript.RunParticles(movementPlayerScript.DieParticle, Position.transform.position);
+        Player.gameObject.SetActive(true);
+        Player.gameObject.transform.position = new Vector3(Player.gameObject.transform.position.x, Position.transform.position.y, Position.transform.position.z);
     }
 
 }

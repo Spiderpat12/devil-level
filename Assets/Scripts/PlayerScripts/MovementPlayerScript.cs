@@ -20,6 +20,7 @@ public class MovementPlayerScript : MonoBehaviour
     [Header("ProprtiesControls")]
     public bool ReverseControl = false;
     public bool canJump = true;
+    public bool canMove = true;
 
     [Space]
 
