@@ -10,6 +10,7 @@ public class ToutchCoinScript : MonoBehaviour
 
 
     private Animator anim;
+    MovementPlayerScript movementPlayerScript;
 
     public void Start()
     {
@@ -22,12 +23,15 @@ public class ToutchCoinScript : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && NormalCoin == true)
         {
+            movementPlayerScript = other.gameObject.GetComponent<MovementPlayerScript>();
             if (CoinTrap == false)
             {
+                movementPlayerScript.RunParticles(movementPlayerScript.PlayerParticles[1], other.transform.position);
                 Destroy(this.gameObject);
             }
             else
             {
+                movementPlayerScript.RunParticles(movementPlayerScript.PlayerParticles[1], other.transform.position);
                 anim.SetBool("Run", true);
                 Destroy(this.gameObject);
             }

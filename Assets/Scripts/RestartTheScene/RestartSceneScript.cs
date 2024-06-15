@@ -21,7 +21,7 @@ public class RestartSceneScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             movementPlayerScript = other.gameObject.GetComponent<MovementPlayerScript>();
-            movementPlayerScript.RunParticles(movementPlayerScript.DieParticle, other.transform.position);
+            movementPlayerScript.RunParticles(movementPlayerScript.PlayerParticles[0], other.transform.position);
             Restart();
             Destroy(other.gameObject);
         }

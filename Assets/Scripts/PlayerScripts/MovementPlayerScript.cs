@@ -25,7 +25,7 @@ public class MovementPlayerScript : MonoBehaviour
     [Space]
 
     [Header("Particles")]
-    public ParticleSystem DieParticle;
+    public ParticleSystem[] PlayerParticles;
 
     [Space]
 

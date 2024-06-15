@@ -19,7 +19,7 @@ public class TeleportScript : MonoBehaviour
         if ((other.gameObject.tag == "Player"))
         {
             movementPlayerScript = other.GetComponent<MovementPlayerScript>();
-            movementPlayerScript.RunParticles(movementPlayerScript.DieParticle, other.transform.position);
+            movementPlayerScript.RunParticles(movementPlayerScript.PlayerParticles[0], other.transform.position);
             other.gameObject.SetActive(false);
             Player = other.gameObject;
             StartCoroutine(Teleport(delay));
@@ -30,7 +30,7 @@ public class TeleportScript : MonoBehaviour
     IEnumerator Teleport(float delay)
     {
         yield return new WaitForSeconds(delay);
-        movementPlayerScript.RunParticles(movementPlayerScript.DieParticle, Position.transform.position);
+        movementPlayerScript.RunParticles(movementPlayerScript.PlayerParticles[0], Position.transform.position);
         Player.gameObject.SetActive(true);
         Player.gameObject.transform.position = new Vector3(Player.gameObject.transform.position.x, Position.transform.position.y, Position.transform.position.z);
     }

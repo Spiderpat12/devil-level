@@ -298,13 +298,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98af44ca41681d647a216858431bb2f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 12
   jumpForce: 11.5
   groundCheckDistance: 2.4
   rotationSpeed: 15
   ReverseControl: 0
   canJump: 1
-  DieParticle: {fileID: 8940692316914894114, guid: 99a4acb212d50d346a0b4d438bc1694a, type: 3}
+  canMove: 1
+  PlayerParticles:
+  - {fileID: 8940692316914894114, guid: 99a4acb212d50d346a0b4d438bc1694a, type: 3}
+  - {fileID: 8940692316914894114, guid: 5079aa4ff5da7504cabac9e290e6df09, type: 3}
   CanRunAnimation: 1
 --- !u!136 &2043714481732650384
 CapsuleCollider:
