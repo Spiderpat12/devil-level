@@ -9,6 +9,8 @@ public class GroundFill : MonoBehaviour
     private float dis;
     private Animator anim;
     private GameObject Player;
+    private bool PlayerTriggered = false;
+    private float playerCheckDis = 40f;
 
     private void Awake()
     {
@@ -23,10 +25,15 @@ public class GroundFill : MonoBehaviour
 
     private void Update()
     {
-        dis = Vector3.Distance(transform.position, Player.transform.position);
-        print(dis);
+        if (Player != null)
+        {
+            dis = Vector3.Distance(transform.position, Player.transform.position);
+        }
 
-        if (dis < near)
+        PlayerTriggered = CheckPlayer();
+
+
+        if (dis < near || PlayerTriggered)
         {
             StartCoroutine(Delay(delay));
         }
@@ -37,6 +44,20 @@ public class GroundFill : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         anim.SetBool("Run", true);
+    }
+
+    public void AnimationFinished()
+    {
+        Destroy(this.gameObject);
+    }
+
+    bool CheckPlayer()
+    {
+        RaycastHit hit;
+        bool isPlayer = Physics.Raycast(transform.position, Vector3.up, out hit, playerCheckDis) && hit.collider.CompareTag("Player");
+        Color colorRay = isPlayer ? Color.green : Color.red;
+        Debug.DrawRay(transform.position, Vector3.up * playerCheckDis, colorRay);
+        return isPlayer;
     }
 
 }

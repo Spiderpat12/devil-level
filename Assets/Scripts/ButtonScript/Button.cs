@@ -8,14 +8,12 @@ public class Button : MonoBehaviour
     public Animator anim;
     public bool Run = false;
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if ((collision.gameObject.tag == "Player") && Run == false)
+        if ((other.gameObject.tag == "Player") && Run == false)
         {
             Run = true;
             anim.SetBool("RunButton", true);
         }
     }
-
 }

@@ -37,7 +37,7 @@ public class RestartSceneScript : MonoBehaviour
 
     IEnumerator Death(float delay)
     {
-        LevelLoaderScriipt.levelLoaderScriipt.RunAnimation(0.5f);
+        LevelLoaderScriipt.levelLoaderScriipt.RunAnimation(0.25f);
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

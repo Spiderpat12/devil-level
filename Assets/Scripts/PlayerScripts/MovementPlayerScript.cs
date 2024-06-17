@@ -5,6 +5,7 @@ using UnityEngine;
 public class MovementPlayerScript : MonoBehaviour
 {
     [Header ("Transform")]
+    public GameObject RayPos;
     private Vector3 movement;
 
     [Space]
@@ -12,7 +13,7 @@ public class MovementPlayerScript : MonoBehaviour
     [Header ("ProprtiesValues")]
     public float speed;
     public float jumpForce;
-    public float groundCheckDistance;
+    public float groundCheckDistance = 1f;
     public float rotationSpeed;
 
     [Space]
@@ -145,9 +146,9 @@ public class MovementPlayerScript : MonoBehaviour
     bool CheckGrounded()
     {
         RaycastHit hit;
-        bool grounded = Physics.Raycast(transform.position, Vector3.down, out hit, groundCheckDistance) && !hit.collider.CompareTag("DamageObject");
+        bool grounded = Physics.Raycast(RayPos.transform.position, Vector3.down, out hit, groundCheckDistance) && !hit.collider.CompareTag("DamageObject");
         Color colorRay = grounded ? Color.green : Color.red;
-        Debug.DrawRay(transform.position, Vector3.down * groundCheckDistance, colorRay);
+        Debug.DrawRay(RayPos.transform.position, Vector3.down * groundCheckDistance, colorRay);
         return grounded;
     }
 }

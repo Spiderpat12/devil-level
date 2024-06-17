@@ -22,7 +22,11 @@ public class GroundDown : MonoBehaviour
 
     private void Update()
     {
-        dis = Vector3.Distance(transform.position, Player.transform.position);
+        if (Player != null)
+        {
+            dis = Vector3.Distance(transform.position, Player.transform.position);
+        }
+
         transform.position = new Vector3(0f, transform.position.y, transform.position.z);
         print(dis);
 
