@@ -230,10 +230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 326342d5a2068864b863e64d9a46e20f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelNumber: {fileID: 11400000, guid: e839ae81061c0b54bb274d3195a66ed0, type: 2}
   DelayAnimation: 1
   NearValue: 3
   SceneName: 
-  delayTeleport: 0.5
 --- !u!1 &5513210409376287376
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 8651128667761503803}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +293,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6b822043841575f48be6b6e892b91113, type: 2}
+  - {fileID: 2100000, guid: e468863bfc1818d4c8afe7d0c4e574f3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

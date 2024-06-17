@@ -10,6 +10,8 @@ public class Door : MonoBehaviour
     private Animator anim;
     private float delayTeleport = 2f;
     private Vector3 originalScale;
+    [SerializeField]
+    private LevelNumber levelNumber;
 
     public float DelayAnimation = 0.5f;
     public float NearValue;
@@ -63,7 +65,7 @@ public class Door : MonoBehaviour
         LevelLoaderScriipt.levelLoaderScriipt.RunAnimation(0.5f);
         yield return new WaitForSeconds(delay);
         SceneManager.LoadScene(SceneName);
-        WhatIsTheLevel.instance.TheLevel += 1;
+        levelNumber.value += 1;
         print("Teleport");
     }
 

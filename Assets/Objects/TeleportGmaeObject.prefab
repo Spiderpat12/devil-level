@@ -77,6 +77,26 @@ PrefabInstance:
       propertyPath: Position
       value: 
       objectReference: {fileID: 7170827887271105538}
+    - target: {fileID: 224403767479468829, guid: 1c80aeefcf369424b937e2a16c423d61, type: 3}
+      propertyPath: m_TagString
+      value: DamageObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 1083070921060254440, guid: 1c80aeefcf369424b937e2a16c423d61, type: 3}
+      propertyPath: m_TagString
+      value: DamageObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4957071325421737410, guid: 1c80aeefcf369424b937e2a16c423d61, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e468863bfc1818d4c8afe7d0c4e574f3, type: 2}
+    - target: {fileID: 7429031914496946044, guid: 1c80aeefcf369424b937e2a16c423d61, type: 3}
+      propertyPath: m_TagString
+      value: DamageObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090485847839404393, guid: 1c80aeefcf369424b937e2a16c423d61, type: 3}
+      propertyPath: m_TagString
+      value: DamageObject
+      objectReference: {fileID: 0}
     - target: {fileID: 8577708428796231260, guid: 1c80aeefcf369424b937e2a16c423d61, type: 3}
       propertyPath: m_Name
       value: Teleport
