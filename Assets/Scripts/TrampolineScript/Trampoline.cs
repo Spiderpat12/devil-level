@@ -11,6 +11,7 @@ public class Trampoline : MonoBehaviour
 
     [Header("Proprties")]
     public float TrampolineJumpHeight;
+    public bool thereIsAnimation = true;
 
 
 
@@ -18,7 +19,10 @@ public class Trampoline : MonoBehaviour
     {
         if ((other.gameObject.tag == "Player"))
         {
-            anim.SetBool("Run", true);
+            if (thereIsAnimation)
+            {
+                anim.SetBool("Run", true);
+            }
 
             Rigidbody playerRb = other.GetComponent<Rigidbody>();
 
