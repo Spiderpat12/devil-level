@@ -1043,7 +1043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690568389422385248, guid: d5a70b3a5db5cae4881f5868e2e1a02b, type: 3}
       propertyPath: SceneName
-      value: Scale 4
+      value: Door 1
       objectReference: {fileID: 0}
     - target: {fileID: 3690568389422385248, guid: d5a70b3a5db5cae4881f5868e2e1a02b, type: 3}
       propertyPath: delayTeleport

@@ -302,7 +302,7 @@ MonoBehaviour:
   RayPos: {fileID: 5620573789585735695}
   speed: 12
   jumpForce: 10.5
-  groundCheckDistance: 0.9
+  groundCheckDistance: 0.8
   rotationSpeed: 15
   ReverseControl: 0
   canJump: 1

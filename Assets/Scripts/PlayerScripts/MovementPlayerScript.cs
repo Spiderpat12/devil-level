@@ -13,7 +13,7 @@ public class MovementPlayerScript : MonoBehaviour
     [Header ("ProprtiesValues")]
     public float speed;
     public float jumpForce;
-    public float groundCheckDistance = 1f;
+    public float groundCheckDistance1 = 0.8f;
     public float rotationSpeed;
 
     [Space]
@@ -22,6 +22,7 @@ public class MovementPlayerScript : MonoBehaviour
     public bool ReverseControl = false;
     public bool canJump = true;
     public bool canMove = true;
+    public bool Door = false;
 
     [Space]
 
@@ -61,8 +62,11 @@ public class MovementPlayerScript : MonoBehaviour
     void FixedUpdate()
     {
         Move(movement);
-        Flip();
-        Animator();
+        if (Door == false)
+        {
+            Flip();
+            Animator();
+        }
         Control();
     }
 
@@ -146,9 +150,9 @@ public class MovementPlayerScript : MonoBehaviour
     bool CheckGrounded()
     {
         RaycastHit hit;
-        bool grounded = Physics.Raycast(RayPos.transform.position, Vector3.down, out hit, groundCheckDistance) && !hit.collider.CompareTag("DamageObject");
+        bool grounded = Physics.Raycast(RayPos.transform.position, Vector3.down, out hit, groundCheckDistance1) && !hit.collider.CompareTag("DamageObject");
         Color colorRay = grounded ? Color.green : Color.red;
-        Debug.DrawRay(RayPos.transform.position, Vector3.down * groundCheckDistance, colorRay);
+        Debug.DrawRay(RayPos.transform.position, Vector3.down * groundCheckDistance1, colorRay);
         return grounded;
     }
 }

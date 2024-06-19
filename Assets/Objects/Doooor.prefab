@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3574612878459461433}
   m_Layer: 0
   m_Name: Cube.002
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -234,6 +234,9 @@ MonoBehaviour:
   DelayAnimation: 1
   NearValue: 3
   SceneName: 
+  PlayerIsDoor: 0
+  PlayerScalse: {x: 0.5, y: 0.5, z: 0.5}
+  PlyayerRotaiotn: 90
 --- !u!1 &5513210409376287376
 GameObject:
   m_ObjectHideFlags: 0
