@@ -13,7 +13,7 @@ public class MovementPlayerScript : MonoBehaviour
     [Header ("ProprtiesValues")]
     public float speed;
     public float jumpForce;
-    public float groundCheckDistance1 = 0.8f;
+    public float detectionRadius = 0.8f;
     public float rotationSpeed;
 
     [Space]
@@ -50,9 +50,8 @@ public class MovementPlayerScript : MonoBehaviour
     {
         moveZ = Input.GetAxis("Horizontal");
 
-        isGrounded = CheckGrounded();
 
-        if (Input.GetButtonDown("Jump") && isGrounded && canJump == true)
+        if (Input.GetButtonDown("Jump") && isGrounded == true && canJump == true)
         {
             Jump();
         }
@@ -61,6 +60,9 @@ public class MovementPlayerScript : MonoBehaviour
 
     void FixedUpdate()
     {
+
+        print(isGrounded);
+
         Move(movement);
         if (Door == false)
         {
@@ -68,6 +70,7 @@ public class MovementPlayerScript : MonoBehaviour
             Animator();
         }
         Control();
+        groundCheck();
     }
 
     public void Control()
@@ -84,20 +87,20 @@ public class MovementPlayerScript : MonoBehaviour
     }
     void Animator()
     {
-        if (moveZ != 0 && isGrounded && CanRunAnimation == true)
+        if (moveZ != 0 && isGrounded == true && CanRunAnimation == true)
         {
             anim.SetBool("IsWalk", true);
         }
-        else if (moveZ == 0 && isGrounded || CanRunAnimation == false)
+        else if (moveZ == 0 && isGrounded == true || CanRunAnimation == false)
         {
             anim.SetBool("IsWalk", false);
         }
 
-        if (!isGrounded && CanRunAnimation == true)
+        if (isGrounded == false && CanRunAnimation == true)
         {
             anim.SetBool("IsJump", true);
         }
-        else if (isGrounded && CanRunAnimation == true)
+        else if (isGrounded == true && CanRunAnimation == true)
         {
             anim.SetBool("IsJump", false);
         }
@@ -147,12 +150,27 @@ public class MovementPlayerScript : MonoBehaviour
         rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
     }
 
-    bool CheckGrounded()
+    public void groundCheck()
     {
-        RaycastHit hit;
-        bool grounded = Physics.Raycast(RayPos.transform.position, Vector3.down, out hit, groundCheckDistance1) && !hit.collider.CompareTag("DamageObject");
-        Color colorRay = grounded ? Color.green : Color.red;
-        Debug.DrawRay(RayPos.transform.position, Vector3.down * groundCheckDistance1, colorRay);
-        return grounded;
+        Collider[] hitColliders = Physics.OverlapSphere(RayPos.transform.position, detectionRadius);
+        isGrounded = false;
+
+        foreach (Collider hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("Ground"))
+            {
+                isGrounded = true;
+                break;
+            }
+        }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(RayPos.transform.position, detectionRadius);
+    }
+
+
 }
+

@@ -51,7 +51,6 @@ public class ButtonRun : MonoBehaviour
 
     public void SetScale()
     {
-        print(canChange);
         if (AnimationFinish)
         {
             switch (ButtonTybes)
